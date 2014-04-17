@@ -1,0 +1,72 @@
+<html>
+<head>
+        <title>Notifications, Dialogs and Messages</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="css/toast.css" type="text/css">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+        
+        <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
+        <script src="js/toast.js"></script>
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+        
+        <script>
+        	
+        	var notification_count=0;
+        	
+        	function createMessage(){		
+        		//phoneGap and jQueryMobile do not support toast messages directly
+        		//so we can add this using toast.js
+               	new Toast({content: 'hello world.', duration: 1000}); 	
+        	}
+        	
+        	
+        	
+        	function createDialog() {
+        		//phonegap supports native dialog boxes.
+        		//here's a simple example
+        		navigator.notification.confirm(
+            		'What do you think of life in the new world?',  // message
+            		dialogDismissed,         // callback
+            		'An example dialog!',            // title
+            		['Awesome!', 'Sucks']                  // buttons
+        		);
+        	}
+        	
+        	
+        	function dialogDismissed(buttonIndex) {
+            	if(buttonIndex==1) new Toast({content: "You're easily pleased", duration: 3000});
+            	else if(buttonIndex==2) new Toast({content: 'It is rather boring.', duration: 3000});
+            }
+
+   
+        	function createNotification() {
+        		
+        		//
+        		//generate a time to post notification
+        		//
+        		var currentTime = new Date().getTime(); //current time
+        		var notificationTime = new Date(currentTime + 1000); //delayed time
+    			
+        		//
+        		//setup notification
+        		//
+        		window.plugin.notification.local.add({ 
+        			id: 		1,
+        			title: 		"Hey you",
+        			message: 	"long time now see hows life treating you",
+        			date: 		notificationTime, 
+        			badge: 		notification_count++
+        		});
+        		
+        	}
+        		
+        </script>
+</head>
+<body>
+        <button onclick="createMessage()">Message</button>
+        <button onclick="createDialog()">Dialog</button>
+        <button onclick="createNotification()">Notification</button> 
+</body>
+</html>
