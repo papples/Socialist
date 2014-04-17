@@ -1,7 +1,7 @@
 Socialist
 =========
 
-A Social media based Taske list
+A Social media based Task list
 
 PhoneGap Build
 ==============
