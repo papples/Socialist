@@ -4,19 +4,14 @@
     <meta charset="utf-8">
     <title>Socialist</title>
     <link href="css/style.css" media="all" rel="stylesheet" type="text/css"/>
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script src="js/underscore-1.1.6.js"></script>
-    <script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
-    <script src="js/todos.js"></script>
-    <scricpt src="js/facebook-js-sdk.js"></scricpt>
-    <script src="js/cdv-plugin-fb-connect.js"></script>
-    <script src="phonegap.js"></script>
+   
   </head>
 
   <body>
+    <div id="fb-root"></div>
+
     <div id="todoapp">
       <div class="title">
-      <div id="fb-root"></div>
       </div>
 
       <div class="content">
@@ -98,9 +93,9 @@
 	<button id="clear-completed">Clear completed (<%= done %>)</button>
       </footer>
     </script>
+    
     <script>
-      // Initialize the Facebook SDK
-      document.addEventListener('deviceready', function() {
+     document.addEventListener('deviceready', function() {
           FB.init({
               appId: '727720677278049',
               nativeInterface: CDV.FB,
@@ -112,7 +107,20 @@
           authUser();
           updateAuthElements();
       });
-  </script>
+    </script>
+    
+     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="http://www.parsecdn.com/js/parse-1.2.13.min.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/cdv-plugin-fb-connect.js"></script>
+    <script src="js/facebook-js-sdk.js"></script>
+    <script src="phonegap.js"></script>
+    <script src="js/ui.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/feed.js"></script>
+  <script src="js/graph_api.js"></script>
+  <script src="js/requests.js"></script>
 
   </body>
 
