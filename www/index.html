@@ -94,20 +94,16 @@
       </footer>
     </script>
     
-    <script>
-     document.addEventListener('deviceready', function() {
-          FB.init({
-              appId: '727720677278049',
-              nativeInterface: CDV.FB,
-              useCachedDialogs: false
-          });
-      
-          FB.getLoginStatus(handleStatusChange);
-      
-          authUser();
-          updateAuthElements();
-      });
-    </script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=727720677278049";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
     
      <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="js/underscore.js"></script>
@@ -116,11 +112,7 @@
     <script src="js/cdv-plugin-fb-connect.js"></script>
     <script src="js/facebook-js-sdk.js"></script>
     <script src="phonegap.js"></script>
-    <script src="js/ui.js"></script>
-  <script src="js/auth.js"></script>
-  <script src="js/feed.js"></script>
-  <script src="js/graph_api.js"></script>
-  <script src="js/requests.js"></script>
+
 
   </body>
 
