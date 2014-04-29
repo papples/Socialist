@@ -5,8 +5,8 @@ html,body {
 
 @font-face {
     font-family: 'Andy-Bold';
-	src:url(../Fonts/Andy-Bold.ttf.woff) format(woff),
-        url(../Font/Andy-Bold.ttf.svg#Andy-Bold) format(svg),
+	src:url(../Fonts/Andy-Bold.ttf.woff) format('woff'),
+        url(../Font/Andy-Bold.ttf.svg#Andy-Bold) format('svg'),
         url(../Font/Andy-Bold.ttf.eot),
         url(../Font/Andy-Bold.ttf.eot?#iefix) format(embedded-opentype); 
         font-weight: normal;
@@ -44,6 +44,7 @@ body {
 }
 
 header{
+	clear:both;
 	font-family: 'Andy-Bold';
     padding:0;
     position:relative;
@@ -56,6 +57,20 @@ header{
     text-shadow:0 -1px 0 rgba(0,0,0,0.5);
     line-height:50px;
 	
+}
+
+#cog{
+	position: fixed;
+	float:left;
+	top: 50px;
+	left: 5;
+}
+
+#profile{
+	position: fixed;
+	float: right;
+	top: 50px;
+	right: 40px;
 }
 
 #todoapp {
@@ -418,6 +433,7 @@ label[for='toggle-all'] {
     font-weight: normal;
     font-size: 25px;
     margin-bottom: 20px;
+	color:#FFF;
 }
 
 #todoapp .content .login input {
